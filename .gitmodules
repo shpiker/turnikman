@@ -1,0 +1,81 @@
+[submodule "sites/all/modules/admin_menu"]
+	path = sites/all/modules/admin_menu
+	url = http://git.drupal.org/project/admin_menu.git
+[submodule "sites/all/modules/l10n_update"]
+	path = sites/all/modules/l10n_update
+	url = http://git.drupal.org/project/l10n_update.git
+[submodule "sites/all/modules/ctools"]
+	path = sites/all/modules/ctools
+	url = http://git.drupal.org/project/ctools.git
+[submodule "sites/all/modules/views"]
+	path = sites/all/modules/views
+	url = http://git.drupal.org/project/views.git
+[submodule "sites/all/modules/token"]
+	path = sites/all/modules/token
+	url = http://git.drupal.org/project/token.git
+[submodule "sites/all/modules/pathauto"]
+	path = sites/all/modules/pathauto
+	url = http://git.drupal.org/project/pathauto.git
+[submodule "sites/all/modules/subpathauto"]
+	path = sites/all/modules/subpathauto
+	url = http://git.drupal.org/project/subpathauto.git
+[submodule "sites/all/modules/transliteration"]
+	path = sites/all/modules/transliteration
+	url = http://git.drupal.org/project/transliteration.git
+[submodule "sites/all/modules/wysiwyg"]
+	path = sites/all/modules/wysiwyg
+	url = http://git.drupal.org/project/wysiwyg.git
+[submodule "sites/all/modules/imce"]
+	path = sites/all/modules/imce
+	url = http://git.drupal.org/project/imce.git
+[submodule "sites/all/modules/imce_wysiwyg"]
+	path = sites/all/modules/imce_wysiwyg
+	url = http://git.drupal.org/project/imce_wysiwyg.git
+[submodule "sites/all/modules/elysia_cron"]
+	path = sites/all/modules/elysia_cron
+	url = http://git.drupal.org/project/elysia_cron.git
+[submodule "sites/all/modules/metatag"]
+	path = sites/all/modules/metatag
+	url = http://git.drupal.org/project/metatag.git
+[submodule "sites/all/modules/panels"]
+	path = sites/all/modules/panels
+	url = http://git.drupal.org/project/panels.git
+[submodule "sites/all/modules/webform"]
+	path = sites/all/modules/webform
+	url = http://git.drupal.org/project/webform.git
+[submodule "sites/all/modules/email"]
+	path = sites/all/modules/email
+	url = http://git.drupal.org/project/email.git
+[submodule "sites/all/modules/media"]
+	path = sites/all/modules/media
+	url = http://git.drupal.org/project/media.git
+[submodule "sites/all/modules/media_youtube"]
+	path = sites/all/modules/media_youtube
+	url = http://git.drupal.org/project/media_youtube.git
+[submodule "sites/all/modules/votingapi"]
+	path = sites/all/modules/votingapi
+	url = http://git.drupal.org/project/votingapi.git
+[submodule "sites/all/modules/vote_up_down"]
+	path = sites/all/modules/vote_up_down
+	url = http://git.drupal.org/project/vote_up_down.git
+[submodule "sites/all/modules/fivestar"]
+	path = sites/all/modules/fivestar
+	url = http://git.drupal.org/project/fivestar.git
+[submodule "sites/all/modules/i18n"]
+	path = sites/all/modules/i18n
+	url = http://git.drupal.org/project/i18n.git
+[submodule "sites/all/modules/variable"]
+	path = sites/all/modules/variable
+	url = http://git.drupal.org/project/variable.git
+[submodule "sites/all/modules/field_slideshow"]
+	path = sites/all/modules/field_slideshow
+	url = http://git.drupal.org/project/field_slideshow.git
+[submodule "sites/all/modules/libraries"]
+	path = sites/all/modules/libraries
+	url = http://git.drupal.org/project/libraries.git
+[submodule "sites/all/modules/gmap"]
+	path = sites/all/modules/gmap
+	url = http://git.drupal.org/project/gmap.git
+[submodule "sites/all/modules/location"]
+	path = sites/all/modules/location
+	url = http://git.drupal.org/project/location.git
