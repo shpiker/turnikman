@@ -188,4 +188,46 @@ padding: 20px;
 #block-system-main .panels-flexible-region-1-right .pane-content .bar .foreground {
 	background-color: #189E9E;
 	height: 36px;
- }
+}
+ .view-photos-page .view-content .views-row {
+	margin: 0 5px 5px 0;
+	float: left;
+	box-shadow: 0 0 28px -13px black;
+	width: 295px;
+	height: 280px;
+	padding: 5px;
+
+}
+.view-photos-page .view-content .views-row .vote-current-score,
+.view-photos-page .view-content .views-row .voted-how {
+	display: inline-block;
+	padding: 0;
+}
+.view-photos-page .item-list .pager,
+.view-articles-page .item-list .pager {
+	padding: 25px;
+}
+.view-articles-page .view-content .views-row {
+	margin: 0 5px 5px 0;
+	float: left;
+	box-shadow: 0 0 28px -13px black;
+	width: 295px;
+	height: 370px;
+	padding: 5px;
+}
+.view-articles-page .view-content .views-row .views-field-title {
+	font: 20px Arial;
+	text-align: center;
+}
+p {
+	text-indent: 15px;
+	text-align: justify;
+	margin: 5px;
+}
+.view-articles-page .view-content .views-row .fivestar-summary {
+	font: 14px Arial;
+	margin-top: 5px;
+}
+.content .field-items img {
+	margin: 20px 40px;
+}
