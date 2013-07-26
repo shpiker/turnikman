@@ -1,0 +1,191 @@
+ @font-face {
+ 	font-family: "FFBB";
+ 	src: url(../fonts/FFBB.ttf);
+}
+body,
+#page {
+	min-width: 960px;
+	margin: 0 auto;
+}
+#section-content {
+	width: 960px;
+	margin: 0 auto;
+	min-height: 700px;
+}
+.site-name a {
+	font: 110px FFBB;
+	color: white;
+	text-decoration: none;
+}
+.site-slogan {
+	font: 22px Arial;
+	color: white;
+	text-transform: uppercase;
+	text-align: right;
+	margin: 0 35px 0 0;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+a:hover {
+	text-decoration: underline;
+}
+#section-header {
+	outline: 1px solid black;
+	position: relative;
+	background-color: #002060;
+	margin-bottom: 40px;
+}
+.navigation .main-menu a {
+	color: white;
+	font: 16px Arial;
+	text-transform: uppercase;
+}
+.logo-img img {
+	float: left;
+}
+
+#zone-user-wrapper {
+	background-color: black;
+	box-shadow: 0px 5px 42px -8px black;
+	height: 30px;
+	position: relative;
+}
+#zone-user-wrapper .content li a,
+#zone-user-wrapper .language-switcher-locale-url a {
+	color: white;
+	font: 16px Arial;
+	margin-right: 10px;
+}
+#zone-user .content .menu li,
+#zone-user-wrapper .language-switcher-locale-url li {
+	list-style: none;
+	float: left;
+}
+#zone-user-wrapper #block-system-user-menu {
+	position: absolute;
+	right: -130px;
+	top: -12px;
+}
+#zone-user-wrapper #block-locale-language {
+	position: absolute;
+	top: -10px;
+	left: -160px;
+
+}
+#zone-user-wrapper #block-ajax-register-ajax-register-block {
+	position: absolute;
+	right: -130px;
+	padding-top: 6px;
+}
+header .site-slogan {
+	font: 22px Arial;
+	color: white;
+	text-transform: uppercase;
+	text-align: right;
+	margin: -8px 0 0 440px;
+	width: 424px;
+}
+#section-footer {
+background-color: #002060;
+margin-top: 20px;
+color: white;
+font: 20px Arial;
+padding: 20px;
+}
+
+#block-system-main {
+	padding: 5px;
+	box-shadow: 0 0 25px -8px #002060;
+}
+
+#block-system-main .panels-flexible-region-1-right {
+	height: 472px;
+	width: 317px;
+}
+#block-system-main .panels-flexible-region-1-right .pane-title {
+	background-color: #002060;
+	color: white;
+	display: block;
+	font: 28px Arial;
+	margin: 0 0 10px 0;
+	text-align: center;
+}
+#block-system-main .panels-flexible-region-1-right-inside {
+	padding: 0;
+	height: 472px;
+}
+#block-system-main .panels-flexible-region-1-right #edit-choice .form-item-choice label {
+	font: 20px Arial;
+	color: #000000;
+	margin-left: 5px;
+}
+#block-system-main .panels-flexible-region-1-right .poll .title {
+	font: 24px Arial;
+	display: inline-block;
+	text-align: center;
+	margin-bottom: 15px;
+}
+#block-system-main .panels-flexible-region-1-right .poll .vote-form input[type="submit"] {
+	border: 0;
+	background: none;
+	height: 35px;
+	width: 317px;
+	background-color: #002060;
+	border-radius: 0;
+	color: white;
+	font: 21px Arial;
+	text-shadow: none;
+}
+#block-system-main .panels-flexible-region-1-right .poll .vote-form input[type="submit"]:hover {
+	background-color: #189E9E;
+}
+#block-system-main .panels-flexible-region-1-right .pane-content .links {
+	padding: 0;
+	margin: 1px 0 0 0;
+}
+#block-system-main .panels-flexible-region-1-right .pane-content .links li {
+	list-style: none;
+}
+#block-system-main .panels-flexible-region-1-right .pane-content .total,
+#block-system-main .panels-flexible-region-1-right .pane-content .links li a {
+	display: block;
+	padding: 4px;
+	margin: 0px 0px 1px 0px;
+	background-color: #002060;
+	color: white;
+	text-align: center;
+	font: 21px Arial;
+}
+#block-system-main .panels-flexible-region-1-right .pane-content .total {
+	margin-top: 27px;
+}
+#block-system-main .panels-flexible-region-1-right #edit-choice {
+	height: 236px;
+}
+#block-system-main .panels-flexible-region-1-right .pane-content .poll .percent {
+	position: absolute;
+	z-index: 10;
+	font: 21px Arial;
+	color: black;
+	margin: -50px 0px 0px 256px;
+}
+#block-system-main .panels-flexible-region-1-right .pane-content .poll .text {
+	position: absolute;
+	z-index: 1;
+	font: 21px Arial;
+	color: black;
+	margin: 6px 0 0 10px;
+}
+#block-system-main .panels-flexible-region-1-right .pane-content .bar {
+	position: relative;
+	background-color: white;
+	height: 36px;
+	box-shadow: 0 0 13px -5px #002060;
+	margin-bottom: 20px;
+}
+#block-system-main .panels-flexible-region-1-right .pane-content .bar .foreground {
+	background-color: #189E9E;
+	height: 36px;
+ }

@@ -79,3 +79,15 @@
 [submodule "sites/all/modules/location"]
 	path = sites/all/modules/location
 	url = http://git.drupal.org/project/location.git
+[submodule "sites/all/modules/ajax_register"]
+	path = sites/all/modules/ajax_register
+	url = http://git.drupal.org/project/ajax_register.git
+[submodule "sites/all/modules/captcha"]
+	path = sites/all/modules/captcha
+	url = http://git.drupal.org/project/captcha.git
+[submodule "sites/all/modules/multiupload_filefield_widget"]
+	path = sites/all/modules/multiupload_filefield_widget
+	url = http://git.drupal.org/project/multiupload_filefield_widget.git
+[submodule "sites/all/modules/multiupload_imagefield_widget"]
+	path = sites/all/modules/multiupload_imagefield_widget
+	url = http://git.drupal.org/project/multiupload_imagefield_widget.git
