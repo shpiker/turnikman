@@ -223,6 +223,7 @@ p {
 	text-indent: 15px;
 	text-align: justify;
 	margin: 5px;
+	font: 15px Arial;
 }
 .view-articles-page .view-content .views-row .fivestar-summary {
 	font: 14px Arial;
