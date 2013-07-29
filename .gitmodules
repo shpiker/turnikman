@@ -40,9 +40,6 @@
 [submodule "sites/all/modules/panels"]
 	path = sites/all/modules/panels
 	url = http://git.drupal.org/project/panels.git
-[submodule "sites/all/modules/webform"]
-	path = sites/all/modules/webform
-	url = http://git.drupal.org/project/webform.git
 [submodule "sites/all/modules/email"]
 	path = sites/all/modules/email
 	url = http://git.drupal.org/project/email.git
