@@ -103,3 +103,9 @@
 [submodule "sites/all/modules/addressfield"]
 	path = sites/all/modules/addressfield
 	url = http://git.drupal.org/project/addressfield.git
+[submodule "sites/all/modules/references"]
+	path = sites/all/modules/references
+	url = http://git.drupal.org/project/references.git
+[submodule "sites/all/modules/link"]
+	path = sites/all/modules/link
+	url = http://git.drupal.org/project/link.git

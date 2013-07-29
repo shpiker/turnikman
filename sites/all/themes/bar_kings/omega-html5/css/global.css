@@ -264,6 +264,75 @@ p {
 	font: bold 18px Arial;
 	text-shadow: none;
 }
-.webform-client-form .form-actions input[type="submit"]:hover{
+.webform-client-form .form-actions input[type="submit"]:hover,
+.view-clothing .view-content .views-row input[type="submit"]:hover,
+.view-store .view-content .views-row input[type="submit"]:hover {
 	background-color: #189E9E;
+}
+.view-shop .view-content .views-row {
+	margin: 0 5px 5px 0;
+	float: left;
+	box-shadow: 0 0 28px -13px black;
+	width: 295px;
+	height: 253px;
+	padding: 5px;
+
+}
+.view-shop .views-field-field-link-equipment a,
+.view-clothing .views-field-title a,
+.view-store .views-field-title a {
+	background-color: #002060;
+	color: white;
+	display: block;
+	font: 28px Arial;
+	text-align: center;
+}
+
+.view-clothing .view-content .views-row,
+.view-store .view-content .views-row {
+	margin: 0 5px 5px 0;
+	float: left;
+	box-shadow: 0 0 28px -13px black;
+	width: 295px;
+	height: 302px;
+	padding: 5px;
+
+}
+.views-field-field-product-for-clothing .form-type-textfield,
+.views-field-field-product-for-clothing .form-type-textfield label,
+.views-field-field-product .form-type-textfield ,
+.views-field-field-product .form-type-textfield label  {
+	display: inline-block;
+}
+.view-clothing .view-content .views-row input[type="submit"],
+.view-store .view-content .views-row input[type="submit"] {
+	border: 0;
+	background: none;
+	height: 23px;
+	width: 171px;
+	background-color: #002060;
+	border-radius: 0;
+	color: white;
+	font: bold 16px Arial;
+	text-shadow: none;
+}
+
+article .comment {
+	margin: 0 5px 5px 0;
+	float: left;
+	box-shadow: 0 0 28px -13px black;
+	background-color: #BBE9FF;
+	padding: 5px;
+}
+article .comment header h3 a {
+	font: bold 22px Arial;
+	color: #002060;
+	text-transform: uppercase;
+}
+article {
+	clear: both;
+}
+h2.comment-form {
+	clear: both;
+	font: 30px Arial;
 }
