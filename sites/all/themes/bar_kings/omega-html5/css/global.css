@@ -232,3 +232,38 @@ p {
 .content .field-items img {
 	margin: 20px 40px;
 }
+#page-title {
+	font: 31px Arial;
+	margin: 10px;
+}
+.webform-client-form .webform-component .form-text {
+	height: 40px;
+	padding: 5px 0 5px 15px;
+	font: 16px Arial;
+	width: 500px;
+}
+.webform-client-form .webform-component textarea {
+	padding: 5px 0 5px 15px;
+	font: 16px Arial;
+	width: 500px;
+}
+.panels-flexible-2 .pane-title {
+	font: 24px Arial;
+	margin: 0 0 16px 0;
+	clear: both;
+}
+
+.webform-client-form .form-actions input[type="submit"] {
+	border: 0;
+	background: none;
+	height: 40px;
+	width: 170px;
+	background-color: #002060;
+	border-radius: 0;
+	color: white;
+	font: bold 18px Arial;
+	text-shadow: none;
+}
+.webform-client-form .form-actions input[type="submit"]:hover{
+	background-color: #189E9E;
+}

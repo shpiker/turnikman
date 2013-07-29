@@ -88,3 +88,18 @@
 [submodule "sites/all/modules/multiupload_imagefield_widget"]
 	path = sites/all/modules/multiupload_imagefield_widget
 	url = http://git.drupal.org/project/multiupload_imagefield_widget.git
+[submodule "sites/all/modules/webform"]
+	path = sites/all/modules/webform
+	url = http://git.drupal.org/project/webform.git
+[submodule "sites/all/modules/commerce"]
+	path = sites/all/modules/commerce
+	url = http://git.drupal.org/project/commerce.git
+[submodule "sites/all/modules/rules"]
+	path = sites/all/modules/rules
+	url = http://git.drupal.org/project/rules.git
+[submodule "sites/all/modules/entity"]
+	path = sites/all/modules/entity
+	url = http://git.drupal.org/project/entity.git
+[submodule "sites/all/modules/addressfield"]
+	path = sites/all/modules/addressfield
+	url = http://git.drupal.org/project/addressfield.git
