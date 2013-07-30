@@ -229,9 +229,6 @@ p {
 	font: 14px Arial;
 	margin-top: 5px;
 }
-.content .field-items img {
-	margin: 20px 40px;
-}
 #page-title {
 	font: 31px Arial;
 	margin: 10px;
@@ -265,8 +262,7 @@ p {
 	text-shadow: none;
 }
 .webform-client-form .form-actions input[type="submit"]:hover,
-.view-clothing .view-content .views-row input[type="submit"]:hover,
-.view-store .view-content .views-row input[type="submit"]:hover {
+.view-display-id-block_1 .view-content .views-row input[type="submit"]:hover {
 	background-color: #189E9E;
 }
 .view-shop .view-content .views-row {
@@ -278,38 +274,35 @@ p {
 	padding: 5px;
 
 }
-.view-shop .views-field-field-link-equipment a,
-.view-clothing .views-field-title a,
-.view-store .views-field-title a {
-	background-color: #002060;
+.view-shop .views-field-name span a,
+.view-display-id-block_1 .views-row .views-field-title a {
+	background-color: #000000;
 	color: white;
 	display: block;
-	font: 28px Arial;
+	font: 24px Arial;
 	text-align: center;
+	margin-bottom: 5px;
 }
 
-.view-clothing .view-content .views-row,
-.view-store .view-content .views-row {
+.view-display-id-block_1 .view-content .views-row {
 	margin: 0 5px 5px 0;
 	float: left;
 	box-shadow: 0 0 28px -13px black;
 	width: 295px;
-	height: 302px;
+	height: 335px;
 	padding: 5px;
 
 }
-.views-field-field-product-for-clothing .form-type-textfield,
-.views-field-field-product-for-clothing .form-type-textfield label,
 .views-field-field-product .form-type-textfield ,
 .views-field-field-product .form-type-textfield label  {
 	display: inline-block;
 }
-.view-clothing .view-content .views-row input[type="submit"],
-.view-store .view-content .views-row input[type="submit"] {
+.view-display-id-block_1  .view-content .views-row input[type="submit"] {
 	border: 0;
 	background: none;
 	height: 23px;
-	width: 171px;
+	max-width: 154px;
+	min-width: 149px;
 	background-color: #002060;
 	border-radius: 0;
 	color: white;
@@ -335,4 +328,100 @@ article {
 h2.comment-form {
 	clear: both;
 	font: 30px Arial;
+}
+.view-display-id-block_1 .views-row .views-field-commerce-price {
+	font: 20px Arial;
+}
+
+.translation-link {
+	display: none;
+}
+.commerce-line-item-views-form form table {
+	width: 930px;
+	font: 18px Arial;
+}
+.commerce-line-item-views-form form .cols-5 thead {
+	background-color: #002060;
+	color: white;
+}
+
+.commerce-line-item-views-form form table tbody .delete-line-item {
+	border: 0;
+	background: none;
+	height: 23px;
+	border-radius: 0;
+	color: red;
+	font: 18px Arial;
+	text-shadow: none;
+}
+.commerce-line-item-views-form form table tbody tr {
+	background-color: white;
+}
+.commerce-line-item-views-form form table tbody .delete-line-item:hover {
+	background-color: red;
+	color: white;
+}
+.commerce-line-item-views-form form .line-item-summary {
+	font: 18px Arial;
+}
+.commerce-line-item-views-form form  .line-item-total-raw {
+	color: green;
+}
+
+.commerce-line-item-views-form form .commerce-line-item-actions input {
+	border: 0;
+	background: none;
+	background-color: #002060;
+	height: 30px;
+	border-radius: 0;
+	color: white;
+	font: 18px Arial;
+	text-shadow: none;
+	padding: 5px;
+	margin-right: 2px;
+}
+.commerce-line-item-views-form form .commerce-line-item-actions input:hover {
+	background-color: #189E9E;
+}
+.field-type-image img {
+	float: left;
+	margin-right: 10px;
+}
+.commerce-add-to-cart .form-type-textfield,
+.commerce-add-to-cart .form-type-textfield label  {
+	display: inline-block;
+	font: 20px Arial;
+}
+
+.field-type-commerce-price {
+	font: 35px Arial;
+	color: green;
+}
+
+.commerce-add-to-cart .form-submit {
+	border: 0;
+	background: none;
+	height: 23px;
+	padding: 0 10px;
+	background-color: #002060;
+	border-radius: 0;
+	color: white;
+	font: bold 16px Arial;
+	text-shadow: none;
+}
+.views-field-commerce-price {
+	background-color: green;
+	color: white;
+	text-align: center;
+}
+.panels-flexible-region-3-center {
+  width: 100%;
+}
+.field-type-text-long .field-item {
+	font: 16px Arial;
+	text-align: justify;
+	text-indent: 20px;
+}
+.field-type-taxonomy-term-reference {
+
 }
