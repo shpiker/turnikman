@@ -1,0 +1,4 @@
+name = Mymodule
+description = My first module.
+core = 7.x
+configure = admin/config/content/mymodule

@@ -1,0 +1,57 @@
+<?php
+
+/**
+ * @file
+ * The block module that displays all the products on the store page
+ */
+
+/**
+ * Implements hook_help().
+ */
+function mymodule_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#mymodule':
+    	return '<p>' . t('displays on the page that has all the products in the store') . '</p>';
+  		break;
+  }
+}
+
+/**
+ * Implements hook_menu().
+ */
+function mymodule_menu() {
+	$items = array();
+  $items['all_products'] = array(
+  	'title' => 'All products',
+    'page callback' => 'mymodule_all_products',
+    'access arguments' => array('access content'),
+  );
+  return $items;
+}
+
+/**
+ * Page callback for All product page.
+ */
+function mymodule_all_products() {
+	// Select all products from the database.
+	$query = db_select('commerce_product', 'cp');
+	$query->join('field_data_field_product', 'fp', 'cp.product_id = fp.field_product_product_id');
+	$query->join('field_data_field_image_product', 'ip', 'cp.product_id = ip.entity_id');
+	$query->fields('cp', array('product_id', 'title', 'created'));
+	$query->fields('fp', array('entity_id'));
+	$query->fields('ip');
+	$query->orderBy('cp.created', 'DESC');
+	$products = $query->execute()->fetchAll();
+	$output = '';
+	foreach ($products as $product) {
+		$file = file_load($product->field_image_product_fid);
+		$arguments = array(
+			'path' => $file->uri,
+			'style_name' => '295x220xs',
+			'attributes' => array('class' => array('img-all-products')),
+		);
+		$img = theme('image_style', $arguments);
+		$output .= l($product->title, 'node/' . $product->entity_id, array('attributes' => array('class' => array('title-all-products')))) . '<br>' . l($img, 'node/' . $product->entity_id, array('html' => TRUE)) . '<br>';
+	}
+	return $output;
+}

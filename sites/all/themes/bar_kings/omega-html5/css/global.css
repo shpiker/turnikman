@@ -36,6 +36,7 @@ a:hover {
 	position: relative;
 	background-color: #002060;
 	margin-bottom: 40px;
+	min-width: 960px;
 }
 .navigation .main-menu a {
 	color: white;
@@ -84,7 +85,7 @@ header .site-slogan {
 	color: white;
 	text-transform: uppercase;
 	text-align: right;
-	margin: -8px 0 0 440px;
+	margin: -30px 0 0 440px;
 	width: 424px;
 }
 #section-footer {
@@ -93,6 +94,7 @@ margin-top: 20px;
 color: white;
 font: 20px Arial;
 padding: 20px;
+min-width: 960px;
 }
 
 #block-system-main {
@@ -196,7 +198,6 @@ padding: 20px;
 	width: 295px;
 	height: 280px;
 	padding: 5px;
-
 }
 .view-photos-page .view-content .views-row .vote-current-score,
 .view-photos-page .view-content .views-row .voted-how {
@@ -383,7 +384,7 @@ h2.comment-form {
 .commerce-line-item-views-form form .commerce-line-item-actions input:hover {
 	background-color: #189E9E;
 }
-.field-type-image img {
+.node-products .field-type-image img {
 	float: left;
 	margin-right: 10px;
 }
@@ -422,6 +423,23 @@ h2.comment-form {
 	text-align: justify;
 	text-indent: 20px;
 }
-.field-type-taxonomy-term-reference {
+
+.block-without-title .img-all-products {
+	margin: 0 5px 5px 0;
+	float: left;
+	box-shadow: 0 0 28px -13px black;
+	width: 295px;
+	height: 220px;
+	padding: 5px;
+}
+
+.block-without-title .title-all-products {
+	display: inline-block;
+	padding: 4px;
+	background-color: #002060;
+	color: white;
+	text-align: center;
+	font: 21px Arial;
+	width: 295px;
 
 }
