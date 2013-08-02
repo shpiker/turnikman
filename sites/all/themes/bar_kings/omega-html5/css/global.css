@@ -441,5 +441,35 @@ h2.comment-form {
 	text-align: center;
 	font: 21px Arial;
 	width: 295px;
+}
 
+.field-name-field-term-reference .field-item a {
+	font: 16px Arial;
+	text-transform: uppercase;
+	display: inline-block;
+	background-color: #00ADFF;
+	color: white;
+	padding: 10px;
+	text-decoration: none;
+	border-radius: 6px;
+	margin-bottom: 15px;
+}
+.field-name-field-term-reference .field-item a:hover,
+.comment-form .form-submit:hover {
+	box-shadow: 0 0 34px -7px #002060;
+	background-color: #00AEFF;
+}
+.comment-form .form-submit {
+	font: 14px Arial;
+	background: none;
+	text-shadow: none;
+	border: none;
+	text-transform: uppercase;
+	display: inline-block;
+	background-color: #00ADFF;
+	color: white;
+	padding: 8px;
+	text-decoration: none;
+	border-radius: 5px;
+	margin-bottom: 15px;
 }

@@ -25,7 +25,6 @@ function mymodule_menu() {
   	'title'            => 'All products',
     'page callback'    => 'mymodule_all_products',
     'access arguments' => array('access content'),
-    'attributes'       => array('class' => array('page-all-products')),
   );
   $items['admin/config/development/mymodule'] = array(
   	'title'            => 'Settings mymodule',
@@ -47,7 +46,7 @@ function mymodule_all_products() {
 	$query->join('field_data_commerce_price', 'price', 'ip.entity_id = price.entity_id');
 	$query->fields('cp', array('product_id', 'title', 'created'));
 	$query->fields('fp', array('entity_id'));
-	$query->fields('ip');
+	$query->fields('ip', array('field_image_product_fid'));
 	$query->fields('price', array('commerce_price_amount'));
 	$query->orderBy(variable_get('sort_by', FALSE), variable_get('sort_asc_desc', FALSE));
 	$query->range(0, variable_get('quantity', FALSE));
@@ -82,29 +81,37 @@ function mymodule_get_form() {
 function mymodule_form_settings() {
 	$form = array();
 	$form['quantity'] = array(
-		'#type'	=> 'textfield',
-		'#size' => 25,
-		'#title' => t('Quantity of elements per page'),
+		'#type'	         => 'textfield',
+		'#size'          => 25,
+		'#title' 				 => t('Quantity of elements per page'),
 		'#default_value' => variable_get('quantity', FALSE),
 	);
-	$form['sort_by'] = array(
-		'#type' => 'radios',
-  	'#title' => t('Sort by'),
-  	'#options' => array(
-  		'title' => t('Name'),
-  		'created' => t('Created'),
+	$form['fieldset'] = array(
+		'#type'  => 'fieldset',
+		'#title' => t('Sorting'),
+	);
+	$form['fieldset']['sort_by'] = array(
+		'#type' 							    => 'radios',
+  	'#title' 									=> t('Sort by'),
+  	'#options'                => array(
+  		'title'                 => t('Name'),
+  		'created'               => t('Created'),
   		'commerce_price_amount' => t('Price'),
   	),
   	'#default_value' => variable_get('sort_by', FALSE),
   );
-	$form['sort_asc_desc'] = array(
-		'#type' => 'radios',
-		'#title' => t('Sorting ASC/DESC'),
-		'#options' => array(
-			'asc' => t('ASC'),
-			'desc' => t('DESC'),
+	$form['fieldset']['sort_asc_desc'] = array(
+		'#type' 				 => 'radios',
+		'#title' 				 => t('Sorting ASC/DESC'),
+		'#options' 			 => array(
+			'asc' 				 => t('ASC'),
+			'desc'  			 => t('DESC'),
 		),
 		'#default_value' => variable_get('sort_asc_desc', FALSE),
+	);
+	$form['checkbox_redirect'] = array(
+		'#type'  => 'checkbox',
+		'#title' => t('After saving the settings, go to the page All products'),
 	);
 	return system_settings_form($form);
 }
@@ -116,4 +123,7 @@ function mymodule_form_settings_validate($form, &$form_state) {
 	if(!is_numeric($form_state['values']['quantity'])) {
 		form_set_error('quantity', t('You can only input numbers'));
 	}
+ 	if(!empty($form_state['values']['checkbox_redirect'])) {
+ 		$form_state['redirect'] = array('all_products');
+  }
 }
