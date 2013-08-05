@@ -100,6 +100,8 @@ min-width: 960px;
 #block-system-main {
 	padding: 5px;
 	box-shadow: 0 0 25px -8px #002060;
+	width: 930px;
+
 }
 
 #block-system-main .panels-flexible-region-1-right {
@@ -423,25 +425,18 @@ h2.comment-form {
 	text-align: justify;
 	text-indent: 20px;
 }
-
-.block-without-title .img-all-products {
-	margin: 0 5px 5px 0;
-	float: left;
-	box-shadow: 0 0 28px -13px black;
+.block-product {
 	width: 295px;
-	height: 220px;
 	padding: 5px;
+	text-align: center;
+	font: 18px Arial;
+	float: left;
+	margin: 0 5px 5px 0px;
+	box-shadow: 0 0 22px -8px #002060;
+	height: 242px;
 }
 
-.block-without-title .title-all-products {
-	display: inline-block;
-	padding: 4px;
-	background-color: #002060;
-	color: white;
-	text-align: center;
-	font: 21px Arial;
-	width: 295px;
-}
+
 
 .field-name-field-term-reference .field-item a {
 	font: 16px Arial;
@@ -472,4 +467,10 @@ h2.comment-form {
 	text-decoration: none;
 	border-radius: 5px;
 	margin-bottom: 15px;
+}
+.node-article .field-item img {
+	padding: 0 25%;
+}
+.node-page .field-name-body .even p img {
+	margin: 0 5%;
 }

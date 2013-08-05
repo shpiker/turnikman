@@ -61,7 +61,12 @@ function mymodule_all_products() {
 		);
 		$img = theme('image_style', $arguments);
 		$link = 'node/' . $product->entity_id;
-		$output .= l($product->title, $link, array('attributes' => array('class' => array('title-all-products')))) . '<br>' . l($img, $link, array('html' => TRUE)) . '<br>';
+		$title = explode(' ', $product->title);
+		if (count($title) == 2) {
+  		$title[1] = l($title[1], $link);
+		}
+		$title = implode(' ', $title);
+		$output .= '<div class="block-product">'. $title . l($img, $link, array('html' => TRUE)) . '</div>';
 	}
 	return $output;
 }
