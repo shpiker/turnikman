@@ -89,12 +89,12 @@ header .site-slogan {
 	width: 424px;
 }
 #section-footer {
-background-color: #002060;
-margin-top: 20px;
-color: white;
-font: 20px Arial;
-padding: 20px;
-min-width: 960px;
+	background-color: #002060;
+	margin-top: 20px;
+	color: white;
+	font: 20px Arial;
+	padding: 20px;
+	min-width: 960px;
 }
 
 #block-system-main {
@@ -473,4 +473,14 @@ h2.comment-form {
 }
 .node-page .field-name-body .even p img {
 	margin: 0 5%;
+}
+.pager-for-products {
+	clear: both;
+	text-align: center;
+	border-top: 1px solid;
+	padding-top: 10px;
+	font: 18px Arial;
+}
+.pager-for-products .number {
+	margin-right: 10px;
 }

@@ -68,7 +68,15 @@ function mymodule_all_products() {
 		$title = implode(' ', $title);
 		$output .= '<div class="block-product">'. $title . l($img, $link, array('html' => TRUE)) . '</div>';
 	}
-	return $output;
+	$pager = '<div class="pager-for-products">';
+	for ($i = 1; $i <= variable_get('quantity', FALSE); $i++) {
+		$pager .='<span class="number">' . l($i, 'all_products?p='.$i) . '</span>';
+  }
+	$query = db_select('commerce_product', 'cp');
+	$query->addExpression('COUNT(*)');
+	$count = $query->execute()->fetchField();
+	$pager .='</div>';
+	return $output . $pager;
 }
 
 /**
