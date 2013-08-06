@@ -474,13 +474,40 @@ h2.comment-form {
 .node-page .field-name-body .even p img {
 	margin: 0 5%;
 }
-.pager-for-products {
-	clear: both;
-	text-align: center;
-	border-top: 1px solid;
-	padding-top: 10px;
-	font: 18px Arial;
+#mymodule-table-pager input[type="checkbox"] {
+	display: none;
 }
-.pager-for-products .number {
-	margin-right: 10px;
+
+#mymodule-table-pager .table-all-products {
+	min-width: 930px;
+}
+#mymodule-table-pager .table-all-products tbody tr td {
+	font: 18px Arial;
+	text-align: center;
+}
+#mymodule-table-pager .table-all-products thead tr th a{
+	display: inline-block;
+	padding: 5px;
+	text-align: center;
+	font: 21px Arial;
+	background: #00aeff;
+	color: white;
+}
+#mymodule-table-pager .table-all-products thead tr {
+	background-color: #00AEFF;
+}
+#mymodule-table-pager .table-all-products tbody tr:hover {
+	background-color: #94DDFF;
+	-webkit-transition: background-color .5s ease-in-out;
+}
+#mymodule-table-pager .pager {
+	margin-top: 20px;
+	font: 20px Arial;
+}
+#mymodule-table-pager .table-all-products thead tr th:nth-child(1) {
+	border-right: none;
+}
+#mymodule-table-pager .table-all-products thead tr th {
+	border-right: 1px solid;
+	border-color: white;
 }

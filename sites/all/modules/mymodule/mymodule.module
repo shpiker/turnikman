@@ -23,70 +23,20 @@ function mymodule_menu() {
 	$items = array();
   $items['all_products'] = array(
   	'title'            => 'All products',
-    'page callback'    => 'mymodule_all_products',
+    'page callback'    => 'drupal_get_form',
+    'page arguments'   => array('mymodule_table_pager'),
     'access arguments' => array('access content'),
   );
   $items['admin/config/development/mymodule'] = array(
   	'title'            => 'Settings mymodule',
-  	'page callback'    => 'mymodule_get_form',
+  	'page callback'    => 'drupal_get_form',
+  	'page arguments'   => array('mymodule_form_settings'),
   	'description'      => 'Configure and sorting of items on a page.',
   	'access arguments' => array('admin'),
   );
   return $items;
 }
 
-/**
- * Page callback for All product page.
- */
-function mymodule_all_products() {
-	// Select all products from the database.
-	$query = db_select('commerce_product', 'cp');
-	$query->join('field_data_field_product', 'fp', 'cp.product_id = fp.field_product_product_id');
-	$query->join('field_data_field_image_product', 'ip', 'cp.product_id = ip.entity_id');
-	$query->join('field_data_commerce_price', 'price', 'ip.entity_id = price.entity_id');
-	$query->fields('cp', array('product_id', 'title', 'created'));
-	$query->fields('fp', array('entity_id'));
-	$query->fields('ip', array('field_image_product_fid'));
-	$query->fields('price', array('commerce_price_amount'));
-	$query->orderBy(variable_get('sort_by', FALSE), variable_get('sort_asc_desc', FALSE));
-	$query->range(0, variable_get('quantity', FALSE));
-	$products = $query->execute()->fetchAll();
-	$output = '';
-	foreach ($products as $product) {
-		$file = file_load($product->field_image_product_fid);
-		$arguments = array(
-			'path' => $file->uri,
-			'style_name' => '295x220xs',
-			'attributes' => array('class' => array('img-all-products')),
-		);
-		$img = theme('image_style', $arguments);
-		$link = 'node/' . $product->entity_id;
-		$title = explode(' ', $product->title);
-		if (count($title) == 2) {
-  		$title[1] = l($title[1], $link);
-		}
-		$title = implode(' ', $title);
-		$output .= '<div class="block-product">'. $title . l($img, $link, array('html' => TRUE)) . '</div>';
-	}
-	$pager = '<div class="pager-for-products">';
-	for ($i = 1; $i <= variable_get('quantity', FALSE); $i++) {
-		$pager .='<span class="number">' . l($i, 'all_products?p='.$i) . '</span>';
-  }
-	$query = db_select('commerce_product', 'cp');
-	$query->addExpression('COUNT(*)');
-	$count = $query->execute()->fetchField();
-	$pager .='</div>';
-	return $output . $pager;
-}
-
-/**
- * Function for display form.
- */
-function mymodule_get_form() {
-	$form = drupal_get_form('mymodule_form_settings');
-	$form = drupal_render($form);
-	return $form;
-}
 
 /**
  * Page callback for form settings.
@@ -99,29 +49,7 @@ function mymodule_form_settings() {
 		'#title' 				 => t('Quantity of elements per page'),
 		'#default_value' => variable_get('quantity', FALSE),
 	);
-	$form['fieldset'] = array(
-		'#type'  => 'fieldset',
-		'#title' => t('Sorting'),
-	);
-	$form['fieldset']['sort_by'] = array(
-		'#type' 							    => 'radios',
-  	'#title' 									=> t('Sort by'),
-  	'#options'                => array(
-  		'title'                 => t('Name'),
-  		'created'               => t('Created'),
-  		'commerce_price_amount' => t('Price'),
-  	),
-  	'#default_value' => variable_get('sort_by', FALSE),
-  );
-	$form['fieldset']['sort_asc_desc'] = array(
-		'#type' 				 => 'radios',
-		'#title' 				 => t('Sorting ASC/DESC'),
-		'#options' 			 => array(
-			'asc' 				 => t('ASC'),
-			'desc'  			 => t('DESC'),
-		),
-		'#default_value' => variable_get('sort_asc_desc', FALSE),
-	);
+
 	$form['checkbox_redirect'] = array(
 		'#type'  => 'checkbox',
 		'#title' => t('After saving the settings, go to the page All products'),
@@ -139,4 +67,66 @@ function mymodule_form_settings_validate($form, &$form_state) {
  	if(!empty($form_state['values']['checkbox_redirect'])) {
  		$form_state['redirect'] = array('all_products');
   }
+}
+
+/**
+ * Function for display form.
+ */
+function mymodule_table_pager() {
+  $header = array(
+    'title' => array('data' => t('Name'), 'field' => 'cp.title'),
+    'image' => array('data' => t('Image'), 'field' => 'ip.field_image_product_fid'),
+    'review' => array('data' => t('Review'), 'field' => 'cp.title'),
+    'created' => array('data' => t('Created'), 'field' => 'cp.created'),
+    'price' => array('data' => t('Price'), 'field' => 'price.commerce_price_amount'),
+  );
+	$query = db_select('commerce_product', 'cp');
+	$query->join('field_data_field_product', 'fp', 'cp.product_id = fp.field_product_product_id');
+	$query->join('field_data_field_image_product', 'ip', 'cp.product_id = ip.entity_id');
+	$query->join('field_data_commerce_price', 'price', 'ip.entity_id = price.entity_id');
+  $query = $query->extend('PagerDefault')->extend('TableSort');
+  $query->fields('cp', array('product_id', 'title', 'created'));
+	$query->fields('fp', array('entity_id'));
+	$query->fields('ip', array('field_image_product_fid'));
+	$query->fields('price', array('commerce_price_amount'));
+	$query->limit(variable_get('quantity', FALSE));
+  $query->orderByHeader($header);
+  $result = $query->execute()->fetchAll();
+
+  $options = array();
+  foreach ($result as $row) {
+  	$file = file_load($row->field_image_product_fid);
+		$arguments = array(
+			'path' => $file->uri,
+			'style_name' => '295x220xs',
+			'attributes' => array('class' => array('img-all-products')),
+		);
+		$date = date('H:i d/m/Y' , $row->created);
+		$link = 'node/' . $row->entity_id;
+		$img = theme('image_style', $arguments);
+		$link_img = l($img, $link, array('html' => TRUE));
+		$title = $row->title;
+		$price = commerce_currency_amount_to_decimal($row->commerce_price_amount, 'USD');
+		$options[$row->product_id] = array(
+      'title' => $title,
+      'image' => $link_img,
+      'created' => $date,
+      'review' => t('Product: !link', array('!link' =>  l($title, $link))),
+      'price' => $price,
+    );
+	}
+  $form['product'] = array(
+    '#type' => 'tableselect',
+    '#header' => $header,
+    '#options' => $options,
+    '#attributes' => array(
+    	'class' => array(
+    		'table-all-products',
+    	),
+    ),
+    '#empty' => t('No available products.'),
+  );
+  $form['pager'] = array('#markup' => theme('pager'));
+
+  return $form;
 }

@@ -11,3 +11,12 @@
  * for more information on this topic.
  */
 
+function bar_kings_preprocess_views_view(&$vars) {
+	if (isset($vars['pager'])) {
+		$vars['pager'] = '';
+	}
+}
+
+function bar_kings_preprocess_views_view_fields(&$vars) {
+	$vars['title'] = '';
+}
