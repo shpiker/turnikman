@@ -53,6 +53,11 @@ function mymodule_form_settings() {
 	$form['checkbox_redirect'] = array(
 		'#type'  => 'checkbox',
 		'#title' => t('After saving the settings, go to the page All products'),
+    '#states' => array(
+      'invisible' => array(
+        ':input[name="quantity"]' => array('empty' => TRUE),
+      ),
+    ),
 	);
 	return system_settings_form($form);
 }
