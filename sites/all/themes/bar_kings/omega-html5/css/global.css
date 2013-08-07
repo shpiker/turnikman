@@ -1,4 +1,4 @@
- @font-face {
+@font-face {
  	font-family: "FFBB";
  	src: url(../fonts/FFBB.ttf);
 }
@@ -435,9 +435,6 @@ h2.comment-form {
 	box-shadow: 0 0 22px -8px #002060;
 	height: 242px;
 }
-
-
-
 .field-name-field-term-reference .field-item a {
 	font: 16px Arial;
 	text-transform: uppercase;

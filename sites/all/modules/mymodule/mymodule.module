@@ -70,15 +70,15 @@ function mymodule_form_settings_validate($form, &$form_state) {
 }
 
 /**
- * Function for display form.
+ * Function for created table from the ability to sort and creating pager.
  */
 function mymodule_table_pager() {
   $header = array(
-    'title' => array('data' => t('Name'), 'field' => 'cp.title'),
-    'image' => array('data' => t('Image'), 'field' => 'ip.field_image_product_fid'),
-    'review' => array('data' => t('Review'), 'field' => 'cp.title'),
+    'title'   => array('data' => t('Name'), 'field'    => 'cp.title'),
+    'image'   => array('data' => t('Image'), 'field'   => 'ip.field_image_product_fid'),
+    'review'  => array('data' => t('Review'), 'field'  => 'cp.title'),
     'created' => array('data' => t('Created'), 'field' => 'cp.created'),
-    'price' => array('data' => t('Price'), 'field' => 'price.commerce_price_amount'),
+    'price'   => array('data' => t('Price'), 'field'   => 'price.commerce_price_amount'),
   );
 	$query = db_select('commerce_product', 'cp');
 	$query->join('field_data_field_product', 'fp', 'cp.product_id = fp.field_product_product_id');
@@ -92,14 +92,17 @@ function mymodule_table_pager() {
 	$query->limit(variable_get('quantity', FALSE));
   $query->orderByHeader($header);
   $result = $query->execute()->fetchAll();
-
   $options = array();
   foreach ($result as $row) {
   	$file = file_load($row->field_image_product_fid);
 		$arguments = array(
-			'path' => $file->uri,
+			'path'       => $file->uri,
 			'style_name' => '295x220xs',
-			'attributes' => array('class' => array('img-all-products')),
+			'attributes' => array(
+        'class'    => array(
+          'img-all-products',
+        ),
+      ),
 		);
 		$date = date('H:i d/m/Y' , $row->created);
 		$link = 'node/' . $row->entity_id;
@@ -108,25 +111,24 @@ function mymodule_table_pager() {
 		$title = $row->title;
 		$price = commerce_currency_amount_to_decimal($row->commerce_price_amount, 'USD');
 		$options[$row->product_id] = array(
-      'title' => $title,
-      'image' => $link_img,
+      'title'   => $title,
+      'image'   => $link_img,
       'created' => $date,
-      'review' => t('Product: !link', array('!link' =>  l($title, $link))),
-      'price' => $price,
+      'review'  => t('Product: !link', array('!link' =>  l($title, $link))),
+      'price'   => $price,
     );
 	}
   $form['product'] = array(
-    '#type' => 'tableselect',
-    '#header' => $header,
-    '#options' => $options,
+    '#type'       => 'tableselect',
+    '#header'     => $header,
+    '#options'    => $options,
     '#attributes' => array(
-    	'class' => array(
+    	'class'     => array(
     		'table-all-products',
     	),
     ),
     '#empty' => t('No available products.'),
   );
   $form['pager'] = array('#markup' => theme('pager'));
-
   return $form;
 }
